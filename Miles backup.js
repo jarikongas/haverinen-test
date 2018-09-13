@@ -20,7 +20,9 @@ const tools = require( "./externals/tools.js" ) ; // for sprintf() and printf()
 process.stdout.write( "\n This program prints conversion tables."
                    +  "\n  Type a letter to select a conversion table  "
                    +  "\n m miles to kilometers  "
-                   +  "\n k kilometers to miles  " ) ;
+                   +  "\n k kilometers to miles  "
+                   +  "\n p pounds to kilograms  "
+                   +  "\n x exits the program  " ) ;
 
 process.stdin.on( "data", function( input_from_user )
 {
@@ -31,8 +33,11 @@ process.stdin.on( "data", function( input_from_user )
    var distance_in_miles2 = 10 ;
    var distance_in_kilometers  =  1.6093 * distance_in_miles ;
    var distance_in_kilometers2  =  1.6093 * distance_in_miles ;
+   var pounds = 10
+   var kilograms = pounds * 0.4536 
    var n = 0
    var x = 0
+   var z = 0
    process.stdout.write( "\n "  +  distance_in_miles  +  " miles is "
                       +  distance_in_kilometers  +  " kilometers.\n" ) ;
 
@@ -62,7 +67,24 @@ process.stdin.on( "data", function( input_from_user )
     distance_in_miles2  =  distance_in_miles2  +  10 / 1.609 ;
     tools.printf( "\n %.3f kilometers is %.3f Miles.\n\n",
                 distance_in_kilometers2,  distance_in_miles2 ) ;
-  }}
-   process.exit() ;
+    }               
+    else
+    {
+      if ( user_selection == 'p' || user_selection == 'P' ) 
+      {   while  (   z < 10   )
+        {
+          z++
+          pounds = pounds + 10
+           kilograms  =  kilograms  +  10 * 0.4536 ;
+           tools.printf( "\n %.3f pounds is %.3f kilograms.\n\n",
+           pounds,  kilograms ) ;
+  }}}}
+})
+ {
+ else
+  if ( user_selection == 'x' || user_selection == 'X' )
+        process.exit() ; 
+ }
+
 
   } ) ;

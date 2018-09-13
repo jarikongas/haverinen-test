@@ -62,8 +62,7 @@ process.stdin.on( "data", function( input_from_user )
     distance_in_miles2  =  distance_in_miles2  +  10 / 1.609 ;
     tools.printf( "\n %.3f kilometers is %.3f Miles.\n\n",
                 distance_in_kilometers2,  distance_in_miles2 ) ;
-  } else
-
+  }}
    process.exit() ;
 
   } ) ;

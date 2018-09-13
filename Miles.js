@@ -45,6 +45,7 @@ process.stdin.on( "data", function( input_from_user )
                          distance_in_miles,  distance_in_kilometers ) ) ;
    if ( user_selection == 'm' || user_selection == 'M' ) 
    {while  (   n < 10   )
+    process.stdin.on( "data", function( input_from_user )
    {
      n++
      distance_in_kilometers = distance_in_kilometers + 10 * 1.6093
@@ -52,12 +53,11 @@ process.stdin.on( "data", function( input_from_user )
      tools.printf( "\n %.3f miles is %.3f kilometers.\n\n",
                  distance_in_miles,  distance_in_kilometers ) ;
 
-    }
+    })
   }
-  else
   {
   if ( user_selection == 'k' || user_selection == 'K' ) 
-  
+  process.stdin.on( "data", function( input_from_user )
   {while  (   x < 10   )
   {
     x++
@@ -66,9 +66,10 @@ process.stdin.on( "data", function( input_from_user )
     tools.printf( "\n %.3f kilometers is %.3f Miles.\n\n",
                 distance_in_kilometers2,  distance_in_miles2 ) ;
   }
-  else    
+    
+  {
+  (process.exit)
+  }
   {
 }
-   process.exit() ;
-  } } ) ;
-
+   process.exit() )};

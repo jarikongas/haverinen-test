@@ -30,7 +30,7 @@ process.stdin.on( "data", function( input_from_user )
    var distance_in_kilometers  =  1.6093 * distance_in_miles ;
    var distance_in_kilometers2  =  1.6093 * distance_in_miles ;
    var n = 0
-   var x = 0
+   
    process.stdout.write( "\n "  +  distance_in_miles  +  " miles is "
                       +  distance_in_kilometers  +  " kilometers.\n" ) ;
 
@@ -48,9 +48,10 @@ process.stdin.on( "data", function( input_from_user )
                  distance_in_miles,  distance_in_kilometers ) ;
 
     }
-    while  (   n < 20   )
+    var x = 0
+    while  (   x < 10   )
   {
-    n++
+    x++
     distance_in_kilometers2 = distance_in_kilometers2 + 10
     distance_in_miles2  =  distance_in_miles2  +  10 / 1.609 ;
     tools.printf( "\n %.3f kilometers is %.3f Miles.\n\n",

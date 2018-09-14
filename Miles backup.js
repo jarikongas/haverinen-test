@@ -81,10 +81,7 @@ process.stdin.on( "data", function( input_from_user )
   }}}}
 })
  {
- else
-  if ( user_selection == 'x' || user_selection == 'X' )
+ else if ( user_selection == 'x' || user_selection == 'X' ){
         process.exit() ; 
  }
-
-
   } ) ;

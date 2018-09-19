@@ -4,7 +4,7 @@
 //  http://www.naturalprogramming.com
 
 //  2016-11-18 File created.   2017-08-10 Last modification.
-// git push test
+// git push test21
 
 process.stdout.write( "\n This program is a computer game. Please, "
                     + "\n type in a number : " ) ;
